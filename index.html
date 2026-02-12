@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>뷰티크러쉬 Beauty Crush – 자연스럽게, 티 안 나게. 자연 눈썹문신</title>
+  <meta name="description" content="자연스럽게, 티 안 나게. 내 얼굴에 맞춘 자연 눈썹문신. 얼굴형·눈매·인상에 맞춰 자연스러운 결로 디자인합니다." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      color: #3a2a2a;
+      background: #faf7f5;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ===== Variables ===== */
+    :root {
+      --burgundy: #6A1B2A;
+      --burgundy-light: #8a3040;
+      --burgundy-dark: #551722;
+      --ivory: #faf7f5;
+      --beige: #f3ede8;
+      --beige-warm: #ede5dc;
+      --text-primary: #3a2a2a;
+      --text-secondary: #6b5b5b;
+      --text-light: #9a8a8a;
+      --white: #ffffff;
+      --section-padding: 100px 24px;
+      --max-width: 720px;
+    }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(250, 247, 245, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(106, 27, 42, 0.08);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .nav.scrolled {
+      box-shadow: 0 2px 20px rgba(106, 27, 42, 0.08);
+    }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--burgundy);
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo span {
+      font-weight: 300;
+      color: var(--text-light);
+      font-size: 12px;
+      margin-left: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-link {
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--burgundy);
+    }
+
+    .nav-cta {
+      background: var(--burgundy);
+      color: var(--white);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 24px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    .nav-cta:hover {
+      background: var(--burgundy-light);
+      transform: translateY(-1px);
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      background: linear-gradient(180deg, var(--ivory) 0%, var(--beige) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.62);
+      z-index: 0;
+    }
+
+    .hero-content {
+      max-width: var(--max-width);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--white);
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+      word-break: keep-all;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: #e8a0ad;
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 40px;
+      line-height: 1.8;
+      font-weight: 300;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--burgundy);
+      color: var(--white);
+      padding: 18px 40px;
+      border-radius: 32px;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      box-shadow: 0 4px 24px rgba(106, 27, 42, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: var(--burgundy-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(106, 27, 42, 0.3);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--white);
+      padding: 18px 40px;
+      border-radius: 32px;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .hero-trust {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .hero-trust-item {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 400;
+    }
+
+    .hero-trust-item::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #e8a0ad;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ===== Section Common ===== */
+    .section {
+      padding: var(--section-padding);
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--burgundy);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.5;
+      margin-bottom: 40px;
+      letter-spacing: -0.5px;
+      word-break: keep-all;
+    }
+
+    /* ===== Recommend Section ===== */
+    .recommend {
+      background: var(--white);
+    }
+
+    .recommend-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .recommend-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 24px 28px;
+      background: var(--ivory);
+      border-radius: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    .recommend-item:hover {
+      transform: translateX(4px);
+    }
+
+    .recommend-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      background: rgba(106, 27, 42, 0.08);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .recommend-item p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ===== Profile Section ===== */
+    .profile-section {
+      background: var(--beige);
+    }
+
+    .profile-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .profile-img-wrap {
+      flex-shrink: 0;
+      width: 220px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(106, 27, 42, 0.1);
+    }
+
+    .profile-img-wrap img {
+      width: 100%;
+      display: block;
+    }
+
+    .profile-text {
+      flex: 1;
+      padding-top: 16px;
+    }
+
+    .profile-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--burgundy);
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+
+    .profile-slogan {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      border: none;
+      padding: 0;
+      word-break: keep-all;
+    }
+
+    .profile-slogan em {
+      font-style: normal;
+      color: var(--burgundy);
+    }
+
+    .profile-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-weight: 300;
+      word-break: keep-all;
+    }
+
+    @media (max-width: 768px) {
+      .profile-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 28px;
+      }
+
+      .profile-img-wrap {
+        width: 200px;
+      }
+
+      .profile-slogan {
+        font-size: 19px;
+      }
+    }
+
+    /* ===== Results / Reviews Section ===== */
+    .results {
+      background: var(--beige);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .result-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .result-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(106, 27, 42, 0.08);
+    }
+
+    .result-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 3 / 4;
+    }
+
+    .result-placeholder {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--beige-warm) 0%, #e8ddd5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    .result-placeholder-icon {
+      font-size: 32px;
+      opacity: 0.5;
+    }
+
+    .result-label {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 16px;
+    }
+
+    .result-label span {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-light);
+      letter-spacing: 0.5px;
+    }
+
+    .result-label span:first-child {
+      color: var(--text-secondary);
+    }
+
+    .result-label-divider {
+      color: var(--burgundy);
+      font-size: 14px;
+    }
+
+    /* Video Grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .video-card {
+      background: #1a1a1a;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(106, 27, 42, 0.08);
+    }
+
+    .result-video {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      display: block;
+    }
+
+
+    /* Review Cards */
+    .review-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .review-card {
+      background: var(--white);
+      padding: 28px;
+      border-radius: 16px;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .review-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .review-card::before {
+      content: '"';
+      font-size: 48px;
+      color: var(--burgundy);
+      opacity: 0.2;
+      position: absolute;
+      top: 12px;
+      left: 20px;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .review-card p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      padding-left: 8px;
+    }
+
+    .review-author {
+      margin-top: 12px;
+      padding-left: 8px;
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .results-cta {
+      text-align: center;
+    }
+
+    /* ===== Process Section ===== */
+    .process {
+      background: var(--white);
+    }
+
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    .process-step {
+      display: flex;
+      gap: 24px;
+      padding: 28px 0;
+      position: relative;
+    }
+
+    .process-step:not(:last-child) {
+      border-bottom: 1px solid rgba(106, 27, 42, 0.06);
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: var(--burgundy);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .step-content h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .step-content p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* ===== Price Section ===== */
+    .pricing {
+      background: linear-gradient(135deg, var(--beige-warm) 0%, var(--beige) 100%);
+      text-align: center;
+    }
+
+    .price-box {
+      max-width: 520px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 24px;
+      padding: 56px 40px;
+      box-shadow: 0 8px 40px rgba(106, 27, 42, 0.06);
+    }
+
+    .price-badge {
+      display: inline-block;
+      background: var(--burgundy);
+      color: var(--white);
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+
+    .price-main {
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--burgundy);
+      margin-bottom: 8px;
+      letter-spacing: -2px;
+    }
+
+    .price-main span {
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .price-name {
+      font-size: 18px;
+      color: var(--text-primary);
+      font-weight: 500;
+      margin-bottom: 32px;
+    }
+
+    .price-divider {
+      width: 40px;
+      height: 2px;
+      background: var(--burgundy);
+      opacity: 0.2;
+      margin: 0 auto 32px;
+    }
+
+    .price-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 36px;
+      text-align: left;
+    }
+
+    .price-features li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+
+    .price-features li::before {
+      content: '✓';
+      color: var(--burgundy);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .price-note {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-top: 20px;
+    }
+
+    .price-box .btn-primary {
+      width: 100%;
+      max-width: 340px;
+    }
+
+    /* ===== FAQ Section ===== */
+    .faq {
+      background: var(--white);
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(106, 27, 42, 0.08);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 24px 0;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      font-family: inherit;
+      line-height: 1.5;
+      transition: color 0.3s ease;
+    }
+
+    .faq-question:hover {
+      color: var(--burgundy);
+    }
+
+    .faq-arrow {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+      font-size: 14px;
+      color: var(--text-light);
+      margin-left: 16px;
+    }
+
+    .faq-item.open .faq-arrow {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-answer-inner {
+      padding: 0 0 24px;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    /* ===== Final CTA / Form Section ===== */
+    .form-section {
+      background: var(--beige);
+    }
+
+    .form-wrapper {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .form-intro {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .form-intro p {
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .consult-form {
+      background: var(--white);
+      padding: 48px 36px;
+      border-radius: 20px;
+      border: 1px solid rgba(106, 27, 42, 0.06);
+    }
+
+    .consult-form h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--burgundy);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .form-subtitle {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+
+    .form-group label .required {
+      color: var(--burgundy);
+      margin-left: 2px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #e0d8d4;
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: inherit;
+      color: var(--text-primary);
+      background: var(--ivory);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--burgundy);
+      box-shadow: 0 0 0 3px rgba(106, 27, 42, 0.08);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text-light);
+    }
+
+    .form-group textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .form-privacy {
+      margin: 20px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .form-privacy input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--burgundy);
+      flex-shrink: 0;
+    }
+
+    .form-privacy label {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.5;
+      cursor: pointer;
+    }
+
+    .form-submit {
+      width: 100%;
+      background: var(--burgundy);
+      color: var(--white);
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.3s ease;
+      margin-top: 8px;
+    }
+
+    .form-submit:hover {
+      background: var(--burgundy-light);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(106, 27, 42, 0.2);
+    }
+
+    .form-submit:active {
+      transform: translateY(0);
+    }
+
+    .form-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 48px 24px;
+    }
+
+    .form-success.show {
+      display: block;
+    }
+
+    .form-success-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(106, 27, 42, 0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 28px;
+      color: var(--burgundy);
+    }
+
+    .form-success h4 {
+      font-size: 20px;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .form-success p {
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+
+    /* ===== Naver Button ===== */
+    .btn-naver {
+      display: inline-block;
+      font-size: 14px;
+      color: #03C75A;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.3s ease;
+      border-bottom: 1px solid rgba(3, 199, 90, 0.3);
+      padding-bottom: 2px;
+    }
+
+    .btn-naver:hover {
+      opacity: 0.7;
+    }
+
+    /* ===== KakaoTalk Button ===== */
+    .btn-kakao {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #FEE500;
+      color: #191919;
+      padding: 16px 32px;
+      border-radius: 32px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-kakao:hover {
+      background: #f0d800;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(254, 229, 0, 0.3);
+    }
+
+    .btn-kakao svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .btn-naver-hero {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #03C75A;
+      color: #ffffff;
+      padding: 16px 32px;
+      border-radius: 32px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-naver-hero:hover {
+      background: #02b350;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(3, 199, 90, 0.3);
+    }
+
+    .kakao-fixed {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 98;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #FEE500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .kakao-fixed:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .kakao-fixed svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .kakao-fixed {
+        bottom: 76px;
+        right: 16px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .kakao-fixed svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: #2a1a1a;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+      padding: 40px 24px;
+    }
+
+    .footer-logo {
+      font-size: 16px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 12px;
+    }
+
+    .footer p {
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .footer-links {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* ===== Scroll Animations ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== Floating CTA (Mobile) ===== */
+    .floating-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      padding: 12px 16px;
+      background: rgba(250, 247, 245, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(106, 27, 42, 0.08);
+    }
+
+    .floating-cta a {
+      display: block;
+      background: var(--burgundy);
+      color: var(--white);
+      text-align: center;
+      padding: 16px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      :root {
+        --section-padding: 72px 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 120px 20px 72px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero-sub {
+        font-size: 15px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn-primary,
+      .btn-outline,
+      .btn-naver-hero {
+        padding: 16px 32px;
+        font-size: 15px;
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+      }
+
+      .hero-trust {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .section-title {
+        font-size: 23px;
+      }
+
+      .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .recommend-item {
+        padding: 20px;
+      }
+
+      .process-step {
+        gap: 16px;
+        padding: 24px 0;
+      }
+
+      .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+      }
+
+      .step-content h3 {
+        font-size: 16px;
+      }
+
+      .price-box {
+        padding: 40px 24px;
+      }
+
+      .price-main {
+        font-size: 40px;
+      }
+
+      .consult-form {
+        padding: 36px 24px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .floating-cta {
+        display: block;
+      }
+
+      .footer {
+        padding-bottom: 80px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero h1 {
+        font-size: 24px;
+      }
+
+      .nav-inner {
+        padding: 14px 16px;
+      }
+
+      .nav-logo {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">뷰티크러쉬 <span>Beauty Crush</span></div>
+      <div class="nav-links">
+        <a href="#process" class="nav-link">시술 과정</a>
+        <a href="#pricing" class="nav-link">가격</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </div>
+      <a href="#consultForm" class="nav-cta">무료 상담 신청</a>
+    </div>
+  </nav>
+
+  <!-- A. Hero Section -->
+  <section class="hero" id="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="consulting.MOV" type="video/quicktime" />
+      <source src="consulting.MOV" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up">
+      <h1>
+        자연스럽게, 티 안 나게.<br />
+        내 얼굴에 맞춘 <em>자연 눈썹문신</em>
+      </h1>
+      <p class="hero-sub">
+        얼굴형 · 눈매 · 인상에 맞춰<br />
+        자연스러운 결로 디자인해요.
+      </p>
+      <div class="hero-buttons">
+        <a href="#consultForm" class="btn-primary">무료 상담신청</a>
+        <a href="http://pf.kakao.com/_ZxdGDn" target="_blank" rel="noopener" class="btn-kakao"><svg viewBox="0 0 24 24" fill="#191919"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.22 4.65 6.6l-.96 3.56c-.08.3.26.54.52.37l4.23-2.82c.5.06 1.02.09 1.56.09 5.52 0 10-3.58 10-7.9S17.52 3 12 3z"/></svg>카카오톡 문의</a>
+        <a href="https://naver.me/xpjcOEth" target="_blank" rel="noopener" class="btn-naver-hero">네이버 플레이스</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item">1:1 맞춤 디자인</div>
+        <div class="hero-trust-item">위생 · 소독 철저</div>
+        <div class="hero-trust-item">예약제 운영</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B. Recommend Section -->
+  <section class="section recommend" id="recommend">
+    <div class="section-inner">
+      <p class="section-label fade-up">For You</p>
+      <h2 class="section-title fade-up">이런 분께 추천해요</h2>
+      <ul class="recommend-list">
+        <li class="recommend-item fade-up">
+          <div class="recommend-icon">&#x1F33F;</div>
+          <p>민낯에도 또렷해 보이고 싶은 분</p>
+        </li>
+        <li class="recommend-item fade-up">
+          <div class="recommend-icon">&#x23F0;</div>
+          <p>아침마다 눈썹 그리기 번거로운 분</p>
+        </li>
+        <li class="recommend-item fade-up">
+          <div class="recommend-icon">&#x1F6AB;</div>
+          <p>인위적인 눈썹이 싫은 분</p>
+        </li>
+        <li class="recommend-item fade-up">
+          <div class="recommend-icon">&#x1F494;</div>
+          <p>예전에 반영구가 어색했던 경험이 있는 분</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Profile Section -->
+  <section class="section profile-section" id="profile">
+    <div class="section-inner">
+      <div class="profile-card fade-up">
+        <div class="profile-img-wrap">
+          <img src="profile/profile.JPG" alt="뷰티크러쉬 원장" />
+        </div>
+        <div class="profile-text">
+          <p class="profile-name">뷰티크러쉬 원장</p>
+          <blockquote class="profile-slogan">
+            "눈썹을 새로 그리는 게 아니라,<br />
+            <em>인상을 만듭니다.</em>"
+          </blockquote>
+          <p class="profile-desc">
+            한 분 한 분의 얼굴을 오래 들여다보고,<br />
+            가장 자연스러운 결을 찾아 디자인합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- C. Results / Reviews Section -->
+  <section class="section results" id="results">
+    <div class="section-inner">
+      <p class="section-label fade-up">Before & After</p>
+      <h2 class="section-title fade-up">자연스러운 변화,<br />직접 확인하세요</h2>
+
+      <!-- Before/After Photo Grid -->
+      <div class="results-grid fade-up">
+        <div class="result-card">
+          <img src="procedure/w2.jpeg" alt="자연 눈썹문신 전후 - Natural Combo Brows" loading="lazy" />
+        </div>
+        <div class="result-card">
+          <img src="procedure/w2.png" alt="자연 눈썹문신 전후" loading="lazy" />
+        </div>
+        <div class="result-card">
+          <img src="procedure/women.jpeg" alt="여성 자연 눈썹문신 전후" loading="lazy" />
+        </div>
+        <div class="result-card">
+          <img src="procedure/man1.jpeg" alt="남성 자연 눈썹문신 전후" loading="lazy" />
+        </div>
+        <div class="result-card">
+          <img src="procedure/man2.jpeg" alt="남성 자연 눈썹문신 전후" loading="lazy" />
+        </div>
+        <div class="result-card">
+          <img src="procedure/lip1.png" alt="입술 시술 전후" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Video Section -->
+      <div class="video-grid fade-up">
+        <div class="video-card">
+          <video class="result-video" autoplay muted loop playsinline>
+            <source src="procedure/woman video.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-card">
+          <video class="result-video" autoplay muted loop playsinline>
+            <source src="procedure/woman video2.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+      <!-- Review Cards -->
+      <div class="review-cards">
+        <div class="review-card fade-up">
+          <p>처음이라 많이 긴장했는데, 상담부터 꼼꼼하게 해주셔서 안심이 됐어요. 결과도 너무 자연스러워서 만족합니다!</p>
+          <div class="review-author">20대 / 자연 눈썹문신</div>
+        </div>
+        <div class="review-card fade-up">
+          <p>예전에 다른 곳에서 한 눈썹이 부자연스러워서 고민했는데, 여기서 다시 하고 정말 다르더라고요. 결이 살아있어서 좋아요.</p>
+          <div class="review-author">30대 / 리터치</div>
+        </div>
+        <div class="review-card fade-up">
+          <p>남자라 더 신경 쓰였는데, 얼굴에 맞게 자연스럽게 해주셔서 티가 안 나요. 주변에서 모르더라고요.</p>
+          <div class="review-author">30대 남성 / 자연 눈썹문신</div>
+        </div>
+      </div>
+
+      <div class="results-cta fade-up">
+        <a href="#consultForm" class="btn-primary">후기 보고 상담신청하기</a>
+        <div style="margin-top:16px;">
+          <a href="https://naver.me/xpjcOEth" target="_blank" rel="noopener" class="btn-naver">네이버 플레이스에서 더 많은 후기 보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- D. Process Section -->
+  <section class="section process" id="process">
+    <div class="section-inner">
+      <p class="section-label fade-up">Process</p>
+      <h2 class="section-title fade-up">이렇게 진행돼요</h2>
+      <div class="process-steps">
+        <div class="process-step fade-up">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>상담</h3>
+            <p>원하는 느낌, 라이프스타일, 과거 시술 경험 등을 충분히 듣고 파악합니다.</p>
+          </div>
+        </div>
+        <div class="process-step fade-up">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>맞춤 디자인</h3>
+            <p>얼굴형, 골격, 눈매를 기준으로 가장 자연스러운 눈썹 모양을 설계합니다.</p>
+          </div>
+        </div>
+        <div class="process-step fade-up">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>시술</h3>
+            <p>통증을 최소화한 방식으로 진행하며, 시술 시간은 약 1시간~1시간 30분입니다.</p>
+          </div>
+        </div>
+        <div class="process-step fade-up">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>케어 안내</h3>
+            <p>시술 후 관리법, 세안 시기, 주의사항을 꼼꼼하게 안내해 드립니다.</p>
+          </div>
+        </div>
+        <div class="process-step fade-up">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>경과 체크</h3>
+            <p>시술 후 경과를 확인하고, 필요 시 리터치 일정을 안내해 드립니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- E. Price Section -->
+  <section class="section pricing" id="pricing">
+    <div class="section-inner">
+      <div class="price-box fade-up">
+        <div class="price-badge">자연 눈썹문신</div>
+        <div class="price-main">13<span>만원</span></div>
+        <div class="price-name">자연 눈썹문신 시술</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li>1:1 맞춤 디자인 상담 포함</li>
+          <li>얼굴형 · 골격 분석 후 시술</li>
+          <li>자연스러운 결 표현 (엠보/콤보)</li>
+          <li>위생 도구 1인 1세트 사용</li>
+          <li>시술 후 케어 안내 제공</li>
+        </ul>
+        <a href="#consultForm" class="btn-primary" id="priceCta">13만원 자연눈썹 상담 신청하기</a>
+        <p class="price-note">* 리터치 비용 및 기타 부가 비용은 상담 시 안내드립니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- F. FAQ Section -->
+  <section class="section faq" id="faq">
+    <div class="section-inner">
+      <p class="section-label fade-up">FAQ</p>
+      <h2 class="section-title fade-up">자주 묻는 질문</h2>
+      <div class="faq-list">
+        <div class="faq-item fade-up">
+          <button class="faq-question">
+            통증은 어느 정도인가요?
+            <span class="faq-arrow">&#x25BC;</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">시술 전 마취 크림을 충분히 도포하여 통증을 최소화합니다. 대부분의 고객분들이 "생각보다 안 아프다"고 말씀해 주세요. 개인차가 있지만, 눈썹을 뽑는 정도의 느낌이라고 생각하시면 됩니다.</div>
+          </div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question">
+            얼마나 지속되나요?
+            <span class="faq-arrow">&#x25BC;</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">피부 타입과 생활습관에 따라 다르지만, 평균적으로 1~2년 정도 유지됩니다. 시간이 지나면서 자연스럽게 옅어지며, 리터치를 통해 유지할 수 있습니다.</div>
+          </div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question">
+            시술 후 세안/화장은 언제부터 가능한가요?
+            <span class="faq-arrow">&#x25BC;</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">시술 부위를 제외한 세안은 당일부터 가능합니다. 시술 부위 세안은 약 7일 후부터, 눈썹 부위 화장은 각질이 자연스럽게 탈락된 후(약 7~10일)부터 가능합니다.</div>
+          </div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question">
+            각질/붉음은 얼마나 가나요?
+            <span class="faq-arrow">&#x25BC;</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">시술 후 3~5일 정도 각질이 생기며, 자연스럽게 탈락됩니다. 붉음은 보통 1~2일 내에 가라앉습니다. 시술 직후에도 일상생활이 가능한 수준입니다.</div>
+          </div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question">
+            기존 눈썹이 진한데도 가능한가요?
+            <span class="faq-arrow">&#x25BC;</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">네, 가능합니다. 기존 잔흔의 진한 정도에 따라 제거 후 새로 시술하는 방법과, 그 위에 커버업하는 방법이 있습니다. 상담 시 현재 상태를 확인하고 가장 적합한 방법을 제안해 드립니다.</div>
+          </div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question">
+            임산부나 피부질환이 있어도 시술 가능한가요?
+            <span class="faq-arrow">&#x25BC;</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">임산부, 수유 중인 분, 켈로이드 체질, 피부 질환(아토피, 건선 등)이 있는 경우 시술이 제한될 수 있습니다. 최근 레이저 시술을 받으신 경우에도 일정 기간 이후 가능하니, 상담 시 말씀해 주시면 정확히 안내드리겠습니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- G. Final CTA / Form Section -->
+  <section class="section form-section" id="consultForm">
+    <div class="section-inner">
+      <p class="section-label fade-up" style="text-align:center;">Consultation</p>
+      <h2 class="section-title fade-up" style="text-align:center;">지금 얼굴에 맞는 디자인으로<br />상담 받아보세요.</h2>
+
+      <div class="form-wrapper">
+        <form class="consult-form" id="consultFormEl">
+          <h3>무료 상담 신청</h3>
+          <p class="form-subtitle">편하게 문의해 주세요. 빠르게 연락드리겠습니다.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>이름 <span class="required">*</span></label>
+              <input type="text" name="name" placeholder="이름을 입력해 주세요" required />
+            </div>
+            <div class="form-group">
+              <label>연락처 <span class="required">*</span></label>
+              <input type="tel" name="phone" placeholder="010-0000-0000" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>원하는 날짜/시간대</label>
+            <input type="text" name="schedule" placeholder="예: 평일 오후, 2월 중 등" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>현재 눈썹 상태</label>
+              <select name="browState">
+                <option value="">선택해 주세요</option>
+                <option value="natural">자연 그대로</option>
+                <option value="thin">눈썹이 얇은 편</option>
+                <option value="uneven">좌우 비대칭</option>
+                <option value="previous">이전 시술 있음</option>
+                <option value="etc">기타</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>원하는 느낌</label>
+              <select name="style">
+                <option value="">선택해 주세요</option>
+                <option value="natural">내추럴</option>
+                <option value="clear">또렷하게</option>
+                <option value="texture">결 강조</option>
+                <option value="consult">상담 후 결정</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>문의사항</label>
+            <textarea name="memo" placeholder="궁금한 점이나 원하시는 스타일을 자유롭게 적어주세요"></textarea>
+          </div>
+
+          <div class="form-privacy">
+            <input type="checkbox" id="privacyCheck" required />
+            <label for="privacyCheck">개인정보 수집 및 이용에 동의합니다. (상담 목적으로만 사용되며, 상담 완료 후 파기됩니다.)</label>
+          </div>
+
+          <button type="submit" class="form-submit" id="submitBtn">무료 상담 신청하기</button>
+          <div style="text-align:center; margin-top:20px;">
+            <span style="font-size:13px; color:var(--text-light);">또는</span><br />
+            <a href="http://pf.kakao.com/_ZxdGDn" target="_blank" rel="noopener" class="btn-kakao" style="margin-top:12px; width:100%; max-width:100%;"><svg viewBox="0 0 24 24" fill="#191919"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.22 4.65 6.6l-.96 3.56c-.08.3.26.54.52.37l4.23-2.82c.5.06 1.02.09 1.56.09 5.52 0 10-3.58 10-7.9S17.52 3 12 3z"/></svg>카카오톡으로 문의하기</a>
+          </div>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">&#x2713;</div>
+          <h4>상담 신청이 완료되었습니다</h4>
+          <p>빠른 시일 내에 연락드리겠습니다.<br />감사합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">뷰티크러쉬 Beauty Crush</div>
+    <p>자연 눈썹문신 1:1 맞춤 디자인 전문</p>
+    <div class="footer-links">
+      <a href="https://naver.me/xpjcOEth" target="_blank" rel="noopener">네이버 플레이스</a>
+      <a href="http://pf.kakao.com/_ZxdGDn" target="_blank" rel="noopener">카카오톡 문의</a>
+    </div>
+  </footer>
+
+  <!-- Floating KakaoTalk Button -->
+  <a href="http://pf.kakao.com/_ZxdGDn" target="_blank" rel="noopener" class="kakao-fixed">
+    <svg viewBox="0 0 24 24" fill="#191919"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.22 4.65 6.6l-.96 3.56c-.08.3.26.54.52.37l4.23-2.82c.5.06 1.02.09 1.56.09 5.52 0 10-3.58 10-7.9S17.52 3 12 3z"/></svg>
+  </a>
+
+  <!-- Floating CTA (Mobile) -->
+  <div class="floating-cta" id="floatingCta">
+    <a href="#consultForm">무료 상담 신청하기</a>
+  </div>
+
+  <script>
+    // ===== Navigation scroll effect =====
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // ===== Scroll animation (Intersection Observer) =====
+    var fadeEls = document.querySelectorAll('.fade-up');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    fadeEls.forEach(function (el) { observer.observe(el); });
+
+    // ===== Floating CTA visibility =====
+    var floatingCta = document.getElementById('floatingCta');
+    var heroSection = document.getElementById('hero');
+    var formSection = document.getElementById('consultForm');
+
+    function updateFloatingCta() {
+      var heroBottom = heroSection.getBoundingClientRect().bottom;
+      var formTop = formSection.getBoundingClientRect().top;
+      var windowHeight = window.innerHeight;
+
+      if (heroBottom < 0 && formTop > windowHeight) {
+        floatingCta.style.transform = 'translateY(0)';
+      } else {
+        floatingCta.style.transform = 'translateY(100%)';
+      }
+    }
+
+    floatingCta.style.transition = 'transform 0.3s ease';
+    floatingCta.style.transform = 'translateY(100%)';
+    window.addEventListener('scroll', updateFloatingCta);
+
+    // ===== FAQ Accordion =====
+    var faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(function (item) {
+      var btn = item.querySelector('.faq-question');
+      btn.addEventListener('click', function () {
+        var isOpen = item.classList.contains('open');
+        // Close all
+        faqItems.forEach(function (i) { i.classList.remove('open'); });
+        // Toggle current
+        if (!isOpen) {
+          item.classList.add('open');
+        }
+      });
+    });
+
+    // ===== Form submission =====
+    var consultForm = document.getElementById('consultFormEl');
+    var formSuccess = document.getElementById('formSuccess');
+    var submitBtn = document.getElementById('submitBtn');
+
+    consultForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Meta Pixel Lead event
+      if (window.fbq) {
+        fbq('track', 'Lead');
+      }
+
+      // Hide form and show success message
+      consultForm.style.display = 'none';
+      formSuccess.classList.add('show');
+
+      // Smooth scroll to success message
+      formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    // ===== Price CTA click tracking =====
+    document.getElementById('priceCta').addEventListener('click', function () {
+      if (window.fbq) {
+        fbq('track', 'InitiateCheckout');
+      }
+    });
+
+    // ===== Meta Pixel ViewContent on load =====
+    window.addEventListener('load', function () {
+      if (window.fbq) {
+        fbq('track', 'ViewContent');
+      }
+    });
+
+    // ===== Phone number auto-format =====
+    var phoneInput = document.querySelector('input[name="phone"]');
+    phoneInput.addEventListener('input', function (e) {
+      var value = e.target.value.replace(/[^0-9]/g, '');
+      if (value.length > 3 && value.length <= 7) {
+        value = value.slice(0, 3) + '-' + value.slice(3);
+      } else if (value.length > 7) {
+        value = value.slice(0, 3) + '-' + value.slice(3, 7) + '-' + value.slice(7, 11);
+      }
+      e.target.value = value;
+    });
+
+    // ===== Privacy checkbox -> submit button state =====
+    var privacyCheck = document.getElementById('privacyCheck');
+    privacyCheck.addEventListener('change', function () {
+      submitBtn.disabled = !privacyCheck.checked;
+    });
+    submitBtn.disabled = !privacyCheck.checked;
+  </script>
+
+</body>
+</html>
