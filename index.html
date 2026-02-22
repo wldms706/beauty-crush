@@ -1756,6 +1756,8 @@
       // Send to Google Sheets
       fetch('https://script.google.com/macros/s/AKfycbw0YrpaQG998qQ0_I6aY2QsbSX0PK-ujkLfgLUIv2ZIMpjwihLYON7_weMLhNLPqYIzBg/exec', {
         method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify(formData)
       }).catch(function () {});
 
