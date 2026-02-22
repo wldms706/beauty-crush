@@ -125,6 +125,39 @@
       color: var(--burgundy);
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .lang-btn {
+      background: none;
+      border: 1px solid transparent;
+      padding: 4px 10px;
+      border-radius: 16px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      color: var(--text-light);
+      font-family: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn.active {
+      color: var(--burgundy);
+      border-color: var(--burgundy);
+      background: rgba(106, 27, 42, 0.05);
+    }
+
     .nav-cta {
       background: var(--burgundy);
       color: var(--white);
@@ -1302,11 +1335,17 @@
     <div class="nav-inner">
       <div class="nav-logo">뷰티크러쉬 <span>Beauty Crush</span></div>
       <div class="nav-links">
-        <a href="#process" class="nav-link">시술 과정</a>
-        <a href="#pricing" class="nav-link">가격</a>
+        <a href="#process" class="nav-link" data-ko="시술 과정" data-en="Process">시술 과정</a>
+        <a href="#pricing" class="nav-link" data-ko="가격" data-en="Pricing">가격</a>
         <a href="#faq" class="nav-link">FAQ</a>
       </div>
-      <a href="#consultForm" class="nav-cta">무료 상담 신청</a>
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button class="lang-btn active" id="langKo" onclick="switchLang('ko')">KO</button>
+          <button class="lang-btn" id="langEn" onclick="switchLang('en')">EN</button>
+        </div>
+        <a href="#consultForm" class="nav-cta" data-ko="무료 상담 신청" data-en="Free Consultation">무료 상담 신청</a>
+      </div>
     </div>
   </nav>
 
@@ -1318,21 +1357,21 @@
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content fade-up">
-      <h1>
+      <h1 data-ko="자연스럽게, 티 안 나게.<br />내 얼굴에 맞춘 <em>자연 눈썹문신</em>" data-en="Naturally, Seamlessly.<br />Custom <em>Natural Eyebrow Tattoo</em>">
         자연스럽게, 티 안 나게.<br />
         내 얼굴에 맞춘 <em>자연 눈썹문신</em>
       </h1>
-      <p class="hero-sub">
+      <p class="hero-sub" data-ko="얼굴형 · 눈매 · 인상에 맞춰<br />자연스러운 결로 디자인해요." data-en="Designed with natural strokes<br />to match your face, eyes & features.">
         얼굴형 · 눈매 · 인상에 맞춰<br />
         자연스러운 결로 디자인해요.
       </p>
       <div class="hero-buttons">
-        <a href="#consultForm" class="btn-primary">무료 상담신청</a>
+        <a href="#consultForm" class="btn-primary" data-ko="무료 상담신청" data-en="Free Consultation">무료 상담신청</a>
       </div>
       <div class="hero-trust">
-        <div class="hero-trust-item">1:1 맞춤 디자인</div>
-        <div class="hero-trust-item">위생 · 소독 철저</div>
-        <div class="hero-trust-item">예약제 운영</div>
+        <div class="hero-trust-item" data-ko="1:1 맞춤 디자인" data-en="1:1 Custom Design">1:1 맞춤 디자인</div>
+        <div class="hero-trust-item" data-ko="위생 · 소독 철저" data-en="Strict Hygiene & Sterilization">위생 · 소독 철저</div>
+        <div class="hero-trust-item" data-ko="예약제 운영" data-en="By Appointment Only">예약제 운영</div>
       </div>
     </div>
   </section>
@@ -1341,23 +1380,23 @@
   <section class="section recommend" id="recommend">
     <div class="section-inner">
       <p class="section-label fade-up">For You</p>
-      <h2 class="section-title fade-up">이런 분께 추천해요</h2>
+      <h2 class="section-title fade-up" data-ko="이런 분께 추천해요" data-en="Recommended For You">이런 분께 추천해요</h2>
       <ul class="recommend-list">
         <li class="recommend-item fade-up">
           <div class="recommend-icon">&#x1F33F;</div>
-          <p>민낯에도 또렷해 보이고 싶은 분</p>
+          <p data-ko="민낯에도 또렷해 보이고 싶은 분" data-en="Want to look polished even without makeup">민낯에도 또렷해 보이고 싶은 분</p>
         </li>
         <li class="recommend-item fade-up">
           <div class="recommend-icon">&#x23F0;</div>
-          <p>아침마다 눈썹 그리기 번거로운 분</p>
+          <p data-ko="아침마다 눈썹 그리기 번거로운 분" data-en="Tired of drawing eyebrows every morning">아침마다 눈썹 그리기 번거로운 분</p>
         </li>
         <li class="recommend-item fade-up">
           <div class="recommend-icon">&#x1F6AB;</div>
-          <p>인위적인 눈썹이 싫은 분</p>
+          <p data-ko="인위적인 눈썹이 싫은 분" data-en="Prefer natural-looking brows over artificial ones">인위적인 눈썹이 싫은 분</p>
         </li>
         <li class="recommend-item fade-up">
           <div class="recommend-icon">&#x1F494;</div>
-          <p>예전에 반영구가 어색했던 경험이 있는 분</p>
+          <p data-ko="예전에 반영구가 어색했던 경험이 있는 분" data-en="Had a bad semi-permanent brow experience before">예전에 반영구가 어색했던 경험이 있는 분</p>
         </li>
       </ul>
     </div>
@@ -1371,12 +1410,12 @@
           <img src="profile/profile.JPG" alt="뷰티크러쉬 원장" />
         </div>
         <div class="profile-text">
-          <p class="profile-name">뷰티크러쉬 원장</p>
-          <blockquote class="profile-slogan">
+          <p class="profile-name" data-ko="뷰티크러쉬 원장" data-en="Beauty Crush Director">뷰티크러쉬 원장</p>
+          <blockquote class="profile-slogan" data-ko="&quot;눈썹을 새로 그리는 게 아니라,<br /><em>인상을 만듭니다.</em>&quot;" data-en="&quot;I don't just draw new brows,<br /><em>I create impressions.</em>&quot;">
             "눈썹을 새로 그리는 게 아니라,<br />
             <em>인상을 만듭니다.</em>"
           </blockquote>
-          <p class="profile-desc">
+          <p class="profile-desc" data-ko="한 분 한 분의 얼굴을 오래 들여다보고,<br />가장 자연스러운 결을 찾아 디자인합니다." data-en="I take time to study each face carefully<br />and design the most natural strokes.">
             한 분 한 분의 얼굴을 오래 들여다보고,<br />
             가장 자연스러운 결을 찾아 디자인합니다.
           </p>
@@ -1389,7 +1428,7 @@
   <section class="section results" id="results">
     <div class="section-inner">
       <p class="section-label fade-up">Before & After</p>
-      <h2 class="section-title fade-up">자연스러운 변화,<br />직접 확인하세요</h2>
+      <h2 class="section-title fade-up" data-ko="자연스러운 변화,<br />직접 확인하세요" data-en="See the Natural<br />Transformation">자연스러운 변화,<br />직접 확인하세요</h2>
 
       <!-- Before/After Photo Grid -->
       <div class="results-grid fade-up">
@@ -1430,23 +1469,23 @@
       <!-- Review Cards -->
       <div class="review-cards">
         <div class="review-card fade-up">
-          <p>처음이라 많이 긴장했는데, 상담부터 꼼꼼하게 해주셔서 안심이 됐어요. 결과도 너무 자연스러워서 만족합니다!</p>
-          <div class="review-author">20대 / 자연 눈썹문신</div>
+          <p data-ko="처음이라 많이 긴장했는데, 상담부터 꼼꼼하게 해주셔서 안심이 됐어요. 결과도 너무 자연스러워서 만족합니다!" data-en="It was my first time and I was so nervous, but the thorough consultation put me at ease. The result is so natural — I'm very satisfied!">처음이라 많이 긴장했는데, 상담부터 꼼꼼하게 해주셔서 안심이 됐어요. 결과도 너무 자연스러워서 만족합니다!</p>
+          <div class="review-author" data-ko="20대 / 자연 눈썹문신" data-en="20s / Natural Brow Tattoo">20대 / 자연 눈썹문신</div>
         </div>
         <div class="review-card fade-up">
-          <p>예전에 다른 곳에서 한 눈썹이 부자연스러워서 고민했는데, 여기서 다시 하고 정말 다르더라고요. 결이 살아있어서 좋아요.</p>
-          <div class="review-author">30대 / 리터치</div>
+          <p data-ko="예전에 다른 곳에서 한 눈썹이 부자연스러워서 고민했는데, 여기서 다시 하고 정말 다르더라고요. 결이 살아있어서 좋아요." data-en="My brows from another place looked unnatural, but after redoing them here, the difference is amazing. The texture is so lifelike!">예전에 다른 곳에서 한 눈썹이 부자연스러워서 고민했는데, 여기서 다시 하고 정말 다르더라고요. 결이 살아있어서 좋아요.</p>
+          <div class="review-author" data-ko="30대 / 리터치" data-en="30s / Retouch">30대 / 리터치</div>
         </div>
         <div class="review-card fade-up">
-          <p>남자라 더 신경 쓰였는데, 얼굴에 맞게 자연스럽게 해주셔서 티가 안 나요. 주변에서 모르더라고요.</p>
-          <div class="review-author">30대 남성 / 자연 눈썹문신</div>
+          <p data-ko="남자라 더 신경 쓰였는데, 얼굴에 맞게 자연스럽게 해주셔서 티가 안 나요. 주변에서 모르더라고요." data-en="As a man, I was extra self-conscious, but they made it look so natural that no one can tell. People around me don't even notice!">남자라 더 신경 쓰였는데, 얼굴에 맞게 자연스럽게 해주셔서 티가 안 나요. 주변에서 모르더라고요.</p>
+          <div class="review-author" data-ko="30대 남성 / 자연 눈썹문신" data-en="30s Male / Natural Brow Tattoo">30대 남성 / 자연 눈썹문신</div>
         </div>
       </div>
 
       <div class="results-cta fade-up">
-        <a href="#consultForm" class="btn-primary">후기 보고 상담신청하기</a>
+        <a href="#consultForm" class="btn-primary" data-ko="후기 보고 상담신청하기" data-en="Book After Seeing Reviews">후기 보고 상담신청하기</a>
         <div style="margin-top:16px;">
-          <a href="https://naver.me/xpjcOEth" target="_blank" rel="noopener" class="btn-naver">네이버 플레이스에서 더 많은 후기 보기</a>
+          <a href="https://naver.me/xpjcOEth" target="_blank" rel="noopener" class="btn-naver" data-ko="네이버 플레이스에서 더 많은 후기 보기" data-en="See More Reviews on Naver Place">네이버 플레이스에서 더 많은 후기 보기</a>
         </div>
       </div>
     </div>
@@ -1456,41 +1495,41 @@
   <section class="section process" id="process">
     <div class="section-inner">
       <p class="section-label fade-up">Process</p>
-      <h2 class="section-title fade-up">이렇게 진행돼요</h2>
+      <h2 class="section-title fade-up" data-ko="이렇게 진행돼요" data-en="How It Works">이렇게 진행돼요</h2>
       <div class="process-steps">
         <div class="process-step fade-up">
           <div class="step-number">1</div>
           <div class="step-content">
-            <h3>상담</h3>
-            <p>원하는 느낌, 라이프스타일, 과거 시술 경험 등을 충분히 듣고 파악합니다.</p>
+            <h3 data-ko="상담" data-en="Consultation">상담</h3>
+            <p data-ko="원하는 느낌, 라이프스타일, 과거 시술 경험 등을 충분히 듣고 파악합니다." data-en="We listen carefully to understand your preferences, lifestyle, and past experience.">원하는 느낌, 라이프스타일, 과거 시술 경험 등을 충분히 듣고 파악합니다.</p>
           </div>
         </div>
         <div class="process-step fade-up">
           <div class="step-number">2</div>
           <div class="step-content">
-            <h3>맞춤 디자인</h3>
-            <p>얼굴형, 골격, 눈매를 기준으로 가장 자연스러운 눈썹 모양을 설계합니다.</p>
+            <h3 data-ko="맞춤 디자인" data-en="Custom Design">맞춤 디자인</h3>
+            <p data-ko="얼굴형, 골격, 눈매를 기준으로 가장 자연스러운 눈썹 모양을 설계합니다." data-en="We design the most natural brow shape based on your face, bone structure, and eyes.">얼굴형, 골격, 눈매를 기준으로 가장 자연스러운 눈썹 모양을 설계합니다.</p>
           </div>
         </div>
         <div class="process-step fade-up">
           <div class="step-number">3</div>
           <div class="step-content">
-            <h3>시술</h3>
-            <p>통증을 최소화한 방식으로 진행하며, 시술 시간은 약 1시간~1시간 30분입니다.</p>
+            <h3 data-ko="시술" data-en="Procedure">시술</h3>
+            <p data-ko="통증을 최소화한 방식으로 진행하며, 시술 시간은 약 1시간~1시간 30분입니다." data-en="We minimize pain throughout the process. The procedure takes about 1–1.5 hours.">통증을 최소화한 방식으로 진행하며, 시술 시간은 약 1시간~1시간 30분입니다.</p>
           </div>
         </div>
         <div class="process-step fade-up">
           <div class="step-number">4</div>
           <div class="step-content">
-            <h3>케어 안내</h3>
-            <p>시술 후 관리법, 세안 시기, 주의사항을 꼼꼼하게 안내해 드립니다.</p>
+            <h3 data-ko="케어 안내" data-en="Aftercare Guide">케어 안내</h3>
+            <p data-ko="시술 후 관리법, 세안 시기, 주의사항을 꼼꼼하게 안내해 드립니다." data-en="We provide detailed aftercare instructions including cleansing timing and precautions.">시술 후 관리법, 세안 시기, 주의사항을 꼼꼼하게 안내해 드립니다.</p>
           </div>
         </div>
         <div class="process-step fade-up">
           <div class="step-number">5</div>
           <div class="step-content">
-            <h3>경과 체크</h3>
-            <p>시술 후 경과를 확인하고, 필요 시 리터치 일정을 안내해 드립니다.</p>
+            <h3 data-ko="경과 체크" data-en="Follow-up Check">경과 체크</h3>
+            <p data-ko="시술 후 경과를 확인하고, 필요 시 리터치 일정을 안내해 드립니다." data-en="We check the healing progress and schedule a touch-up if needed.">시술 후 경과를 확인하고, 필요 시 리터치 일정을 안내해 드립니다.</p>
           </div>
         </div>
       </div>
@@ -1501,19 +1540,19 @@
   <section class="section pricing" id="pricing">
     <div class="section-inner">
       <div class="price-box fade-up">
-        <div class="price-badge">자연 눈썹문신</div>
-        <div class="price-main">13<span>만원</span></div>
-        <div class="price-name">자연 눈썹문신 시술</div>
+        <div class="price-badge" data-ko="자연 눈썹문신" data-en="Natural Brow Tattoo">자연 눈썹문신</div>
+        <div class="price-main" data-ko="13<span>만원</span>" data-en="130,000<span>KRW</span>">13<span>만원</span></div>
+        <div class="price-name" data-ko="자연 눈썹문신 시술" data-en="Natural Eyebrow Tattoo">자연 눈썹문신 시술</div>
         <div class="price-divider"></div>
         <ul class="price-features">
-          <li>1:1 맞춤 디자인 상담 포함</li>
-          <li>얼굴형 · 골격 분석 후 시술</li>
-          <li>자연스러운 결 표현 (엠보/콤보)</li>
-          <li>위생 도구 1인 1세트 사용</li>
-          <li>시술 후 케어 안내 제공</li>
+          <li data-ko="1:1 맞춤 디자인 상담 포함" data-en="1:1 Custom design consultation included">1:1 맞춤 디자인 상담 포함</li>
+          <li data-ko="얼굴형 · 골격 분석 후 시술" data-en="Procedure after face & bone structure analysis">얼굴형 · 골격 분석 후 시술</li>
+          <li data-ko="자연스러운 결 표현 (엠보/콤보)" data-en="Natural stroke expression (Microblading / Combo)">자연스러운 결 표현 (엠보/콤보)</li>
+          <li data-ko="위생 도구 1인 1세트 사용" data-en="Individual sterile tool set per client">위생 도구 1인 1세트 사용</li>
+          <li data-ko="시술 후 케어 안내 제공" data-en="Post-procedure care guide provided">시술 후 케어 안내 제공</li>
         </ul>
-        <a href="#consultForm" class="btn-primary" id="priceCta">13만원 자연눈썹 상담 신청하기</a>
-        <p class="price-note">* 리터치 비용 및 기타 부가 비용은 상담 시 안내드립니다.</p>
+        <a href="#consultForm" class="btn-primary" id="priceCta" data-ko="13만원 자연눈썹 상담 신청하기" data-en="Book Natural Brow Consultation">13만원 자연눈썹 상담 신청하기</a>
+        <p class="price-note" data-ko="* 리터치 비용 및 기타 부가 비용은 상담 시 안내드립니다." data-en="* Touch-up and additional costs will be discussed during consultation.">* 리터치 비용 및 기타 부가 비용은 상담 시 안내드립니다.</p>
       </div>
     </div>
   </section>
@@ -1522,60 +1561,60 @@
   <section class="section faq" id="faq">
     <div class="section-inner">
       <p class="section-label fade-up">FAQ</p>
-      <h2 class="section-title fade-up">자주 묻는 질문</h2>
+      <h2 class="section-title fade-up" data-ko="자주 묻는 질문" data-en="Frequently Asked Questions">자주 묻는 질문</h2>
       <div class="faq-list">
         <div class="faq-item fade-up">
           <button class="faq-question">
-            통증은 어느 정도인가요?
+            <span data-ko="통증은 어느 정도인가요?" data-en="How painful is the procedure?">통증은 어느 정도인가요?</span>
             <span class="faq-arrow">&#x25BC;</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">시술 전 마취 크림을 충분히 도포하여 통증을 최소화합니다. 대부분의 고객분들이 "생각보다 안 아프다"고 말씀해 주세요. 개인차가 있지만, 눈썹을 뽑는 정도의 느낌이라고 생각하시면 됩니다.</div>
+            <div class="faq-answer-inner" data-ko="시술 전 마취 크림을 충분히 도포하여 통증을 최소화합니다. 대부분의 고객분들이 &quot;생각보다 안 아프다&quot;고 말씀해 주세요. 개인차가 있지만, 눈썹을 뽑는 정도의 느낌이라고 생각하시면 됩니다." data-en="We apply numbing cream generously before the procedure to minimize pain. Most clients say &quot;it hurts less than expected.&quot; It varies by person, but feels similar to tweezing eyebrows.">시술 전 마취 크림을 충분히 도포하여 통증을 최소화합니다. 대부분의 고객분들이 "생각보다 안 아프다"고 말씀해 주세요. 개인차가 있지만, 눈썹을 뽑는 정도의 느낌이라고 생각하시면 됩니다.</div>
           </div>
         </div>
         <div class="faq-item fade-up">
           <button class="faq-question">
-            얼마나 지속되나요?
+            <span data-ko="얼마나 지속되나요?" data-en="How long does it last?">얼마나 지속되나요?</span>
             <span class="faq-arrow">&#x25BC;</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">피부 타입과 생활습관에 따라 다르지만, 평균적으로 1~2년 정도 유지됩니다. 시간이 지나면서 자연스럽게 옅어지며, 리터치를 통해 유지할 수 있습니다.</div>
+            <div class="faq-answer-inner" data-ko="피부 타입과 생활습관에 따라 다르지만, 평균적으로 1~2년 정도 유지됩니다. 시간이 지나면서 자연스럽게 옅어지며, 리터치를 통해 유지할 수 있습니다." data-en="It varies by skin type and lifestyle, but on average it lasts 1–2 years. It gradually fades over time and can be maintained with touch-ups.">피부 타입과 생활습관에 따라 다르지만, 평균적으로 1~2년 정도 유지됩니다. 시간이 지나면서 자연스럽게 옅어지며, 리터치를 통해 유지할 수 있습니다.</div>
           </div>
         </div>
         <div class="faq-item fade-up">
           <button class="faq-question">
-            시술 후 세안/화장은 언제부터 가능한가요?
+            <span data-ko="시술 후 세안/화장은 언제부터 가능한가요?" data-en="When can I wash my face / wear makeup after?">시술 후 세안/화장은 언제부터 가능한가요?</span>
             <span class="faq-arrow">&#x25BC;</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">시술 부위를 제외한 세안은 당일부터 가능합니다. 시술 부위 세안은 약 7일 후부터, 눈썹 부위 화장은 각질이 자연스럽게 탈락된 후(약 7~10일)부터 가능합니다.</div>
+            <div class="faq-answer-inner" data-ko="시술 부위를 제외한 세안은 당일부터 가능합니다. 시술 부위 세안은 약 7일 후부터, 눈썹 부위 화장은 각질이 자연스럽게 탈락된 후(약 7~10일)부터 가능합니다." data-en="You can wash your face (avoiding the treated area) from the same day. Washing the treated area is okay after about 7 days, and brow makeup after scabs naturally fall off (about 7–10 days).">시술 부위를 제외한 세안은 당일부터 가능합니다. 시술 부위 세안은 약 7일 후부터, 눈썹 부위 화장은 각질이 자연스럽게 탈락된 후(약 7~10일)부터 가능합니다.</div>
           </div>
         </div>
         <div class="faq-item fade-up">
           <button class="faq-question">
-            각질/붉음은 얼마나 가나요?
+            <span data-ko="각질/붉음은 얼마나 가나요?" data-en="How long do scabbing and redness last?">각질/붉음은 얼마나 가나요?</span>
             <span class="faq-arrow">&#x25BC;</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">시술 후 3~5일 정도 각질이 생기며, 자연스럽게 탈락됩니다. 붉음은 보통 1~2일 내에 가라앉습니다. 시술 직후에도 일상생활이 가능한 수준입니다.</div>
+            <div class="faq-answer-inner" data-ko="시술 후 3~5일 정도 각질이 생기며, 자연스럽게 탈락됩니다. 붉음은 보통 1~2일 내에 가라앉습니다. 시술 직후에도 일상생활이 가능한 수준입니다." data-en="Scabbing occurs for about 3–5 days and falls off naturally. Redness typically subsides within 1–2 days. Daily activities are possible right after the procedure.">시술 후 3~5일 정도 각질이 생기며, 자연스럽게 탈락됩니다. 붉음은 보통 1~2일 내에 가라앉습니다. 시술 직후에도 일상생활이 가능한 수준입니다.</div>
           </div>
         </div>
         <div class="faq-item fade-up">
           <button class="faq-question">
-            기존 눈썹이 진한데도 가능한가요?
+            <span data-ko="기존 눈썹이 진한데도 가능한가요?" data-en="Can I get it done if I already have dark brows?">기존 눈썹이 진한데도 가능한가요?</span>
             <span class="faq-arrow">&#x25BC;</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">네, 가능합니다. 기존 잔흔의 진한 정도에 따라 제거 후 새로 시술하는 방법과, 그 위에 커버업하는 방법이 있습니다. 상담 시 현재 상태를 확인하고 가장 적합한 방법을 제안해 드립니다.</div>
+            <div class="faq-answer-inner" data-ko="네, 가능합니다. 기존 잔흔의 진한 정도에 따라 제거 후 새로 시술하는 방법과, 그 위에 커버업하는 방법이 있습니다. 상담 시 현재 상태를 확인하고 가장 적합한 방법을 제안해 드립니다." data-en="Yes, it's possible. Depending on how dark existing traces are, we can either remove them first or cover up over them. We'll assess your condition during consultation and suggest the best approach.">네, 가능합니다. 기존 잔흔의 진한 정도에 따라 제거 후 새로 시술하는 방법과, 그 위에 커버업하는 방법이 있습니다. 상담 시 현재 상태를 확인하고 가장 적합한 방법을 제안해 드립니다.</div>
           </div>
         </div>
         <div class="faq-item fade-up">
           <button class="faq-question">
-            임산부나 피부질환이 있어도 시술 가능한가요?
+            <span data-ko="임산부나 피부질환이 있어도 시술 가능한가요?" data-en="Can pregnant women or people with skin conditions get this done?">임산부나 피부질환이 있어도 시술 가능한가요?</span>
             <span class="faq-arrow">&#x25BC;</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">임산부, 수유 중인 분, 켈로이드 체질, 피부 질환(아토피, 건선 등)이 있는 경우 시술이 제한될 수 있습니다. 최근 레이저 시술을 받으신 경우에도 일정 기간 이후 가능하니, 상담 시 말씀해 주시면 정확히 안내드리겠습니다.</div>
+            <div class="faq-answer-inner" data-ko="임산부, 수유 중인 분, 켈로이드 체질, 피부 질환(아토피, 건선 등)이 있는 경우 시술이 제한될 수 있습니다. 최근 레이저 시술을 받으신 경우에도 일정 기간 이후 가능하니, 상담 시 말씀해 주시면 정확히 안내드리겠습니다." data-en="The procedure may be restricted for pregnant or breastfeeding women, those with keloid skin, or skin conditions (atopic dermatitis, psoriasis, etc.). If you've had recent laser treatment, it's possible after a waiting period. Please let us know during consultation.">임산부, 수유 중인 분, 켈로이드 체질, 피부 질환(아토피, 건선 등)이 있는 경우 시술이 제한될 수 있습니다. 최근 레이저 시술을 받으신 경우에도 일정 기간 이후 가능하니, 상담 시 말씀해 주시면 정확히 안내드리겠습니다.</div>
           </div>
         </div>
       </div>
@@ -1586,64 +1625,64 @@
   <section class="section form-section" id="consultForm">
     <div class="section-inner">
       <p class="section-label fade-up" style="text-align:center;">Consultation</p>
-      <h2 class="section-title fade-up" style="text-align:center;">지금 얼굴에 맞는 디자인으로<br />상담 받아보세요.</h2>
+      <h2 class="section-title fade-up" style="text-align:center;" data-ko="지금 얼굴에 맞는 디자인으로<br />상담 받아보세요." data-en="Get a consultation for a design<br />that fits your face.">지금 얼굴에 맞는 디자인으로<br />상담 받아보세요.</h2>
 
       <div class="form-wrapper">
         <form class="consult-form" id="consultFormEl">
-          <h3>무료 상담 신청</h3>
-          <p class="form-subtitle">편하게 문의해 주세요. 빠르게 연락드리겠습니다.</p>
+          <h3 data-ko="무료 상담 신청" data-en="Free Consultation">무료 상담 신청</h3>
+          <p class="form-subtitle" data-ko="편하게 문의해 주세요. 빠르게 연락드리겠습니다." data-en="Feel free to reach out. We'll get back to you shortly.">편하게 문의해 주세요. 빠르게 연락드리겠습니다.</p>
 
           <div class="form-row">
             <div class="form-group">
-              <label>이름 <span class="required">*</span></label>
-              <input type="text" name="name" placeholder="이름" required />
+              <label data-ko="이름 <span class='required'>*</span>" data-en="Name <span class='required'>*</span>">이름 <span class="required">*</span></label>
+              <input type="text" name="name" placeholder="이름" data-placeholder-ko="이름" data-placeholder-en="Name" required />
             </div>
             <div class="form-group">
-              <label>연락처 <span class="required">*</span></label>
-              <input type="tel" name="phone" placeholder="010-0000-0000" required />
+              <label data-ko="연락처 <span class='required'>*</span>" data-en="Contact <span class='required'>*</span>">연락처 <span class="required">*</span></label>
+              <input type="tel" name="phone" placeholder="010-0000-0000" data-placeholder-ko="010-0000-0000" data-placeholder-en="Phone number" required />
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <label>현재 눈썹 상태</label>
+              <label data-ko="현재 눈썹 상태" data-en="Current Brow Condition">현재 눈썹 상태</label>
               <select name="browState">
-                <option value="">선택해 주세요</option>
-                <option value="natural">자연 그대로</option>
-                <option value="thin">눈썹이 얇은 편</option>
-                <option value="uneven">좌우 비대칭</option>
-                <option value="previous">이전 시술 있음</option>
-                <option value="etc">기타</option>
+                <option value="" data-ko="선택해 주세요" data-en="Please select">선택해 주세요</option>
+                <option value="natural" data-ko="자연 그대로" data-en="Natural as-is">자연 그대로</option>
+                <option value="thin" data-ko="눈썹이 얇은 편" data-en="Thin brows">눈썹이 얇은 편</option>
+                <option value="uneven" data-ko="좌우 비대칭" data-en="Asymmetric">좌우 비대칭</option>
+                <option value="previous" data-ko="이전 시술 있음" data-en="Previous procedure">이전 시술 있음</option>
+                <option value="etc" data-ko="기타" data-en="Other">기타</option>
               </select>
             </div>
             <div class="form-group">
-              <label>원하는 느낌</label>
+              <label data-ko="원하는 느낌" data-en="Desired Look">원하는 느낌</label>
               <select name="style">
-                <option value="">선택해 주세요</option>
-                <option value="natural">내추럴</option>
-                <option value="clear">또렷하게</option>
-                <option value="texture">결 강조</option>
-                <option value="consult">상담 후 결정</option>
+                <option value="" data-ko="선택해 주세요" data-en="Please select">선택해 주세요</option>
+                <option value="natural" data-ko="내추럴" data-en="Natural">내추럴</option>
+                <option value="clear" data-ko="또렷하게" data-en="Defined">또렷하게</option>
+                <option value="texture" data-ko="결 강조" data-en="Textured">결 강조</option>
+                <option value="consult" data-ko="상담 후 결정" data-en="Decide after consultation">상담 후 결정</option>
               </select>
             </div>
           </div>
 
           <div class="form-privacy">
             <input type="checkbox" id="privacyCheck" required />
-            <label for="privacyCheck">개인정보 수집 및 이용에 동의합니다. (상담 목적으로만 사용되며, 상담 완료 후 파기됩니다.)</label>
+            <label for="privacyCheck" data-ko="개인정보 수집 및 이용에 동의합니다. (상담 목적으로만 사용되며, 상담 완료 후 파기됩니다.)" data-en="I agree to the collection and use of personal information. (Used only for consultation purposes and deleted after completion.)">개인정보 수집 및 이용에 동의합니다. (상담 목적으로만 사용되며, 상담 완료 후 파기됩니다.)</label>
           </div>
 
-          <button type="submit" class="form-submit" id="submitBtn">무료 상담 신청하기</button>
+          <button type="submit" class="form-submit" id="submitBtn" data-ko="무료 상담 신청하기" data-en="Submit Free Consultation">무료 상담 신청하기</button>
           <div style="text-align:center; margin-top:20px;">
-            <span style="font-size:13px; color:var(--text-light);">또는</span><br />
-            <a href="http://pf.kakao.com/_ZxdGDn" target="_blank" rel="noopener" class="btn-kakao" style="margin-top:12px; width:100%; max-width:100%;"><svg viewBox="0 0 24 24" fill="#191919"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.22 4.65 6.6l-.96 3.56c-.08.3.26.54.52.37l4.23-2.82c.5.06 1.02.09 1.56.09 5.52 0 10-3.58 10-7.9S17.52 3 12 3z"/></svg>카카오톡으로 문의하기</a>
+            <span style="font-size:13px; color:var(--text-light);" data-ko="또는" data-en="or">또는</span><br />
+            <a href="http://pf.kakao.com/_ZxdGDn" target="_blank" rel="noopener" class="btn-kakao" style="margin-top:12px; width:100%; max-width:100%;"><svg viewBox="0 0 24 24" fill="#191919"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.22 4.65 6.6l-.96 3.56c-.08.3.26.54.52.37l4.23-2.82c.5.06 1.02.09 1.56.09 5.52 0 10-3.58 10-7.9S17.52 3 12 3z"/></svg><span data-ko="카카오톡으로 문의하기" data-en="Contact via KakaoTalk">카카오톡으로 문의하기</span></a>
           </div>
         </form>
 
         <div class="form-success" id="formSuccess">
           <div class="form-success-icon">&#x2713;</div>
-          <h4>상담 신청이 완료되었습니다</h4>
-          <p>빠른 시일 내에 연락드리겠습니다.<br />감사합니다.</p>
+          <h4 data-ko="상담 신청이 완료되었습니다" data-en="Consultation request submitted">상담 신청이 완료되었습니다</h4>
+          <p data-ko="빠른 시일 내에 연락드리겠습니다.<br />감사합니다." data-en="We'll contact you soon.<br />Thank you.">빠른 시일 내에 연락드리겠습니다.<br />감사합니다.</p>
         </div>
       </div>
     </div>
@@ -1652,10 +1691,10 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-logo">뷰티크러쉬 Beauty Crush</div>
-    <p>자연 눈썹문신 1:1 맞춤 디자인 전문</p>
+    <p data-ko="자연 눈썹문신 1:1 맞춤 디자인 전문" data-en="Natural Eyebrow Tattoo — 1:1 Custom Design Specialist">자연 눈썹문신 1:1 맞춤 디자인 전문</p>
     <div class="footer-links">
-      <a href="https://naver.me/xpjcOEth" target="_blank" rel="noopener">네이버 플레이스</a>
-      <a href="http://pf.kakao.com/_ZxdGDn" target="_blank" rel="noopener">카카오톡 문의</a>
+      <a href="https://naver.me/xpjcOEth" target="_blank" rel="noopener" data-ko="네이버 플레이스" data-en="Naver Place">네이버 플레이스</a>
+      <a href="http://pf.kakao.com/_ZxdGDn" target="_blank" rel="noopener" data-ko="카카오톡 문의" data-en="KakaoTalk">카카오톡 문의</a>
     </div>
   </footer>
 
@@ -1666,10 +1705,47 @@
 
   <!-- Floating CTA (Mobile) -->
   <div class="floating-cta" id="floatingCta">
-    <a href="#consultForm">무료 상담 신청하기</a>
+    <a href="#consultForm" data-ko="무료 상담 신청하기" data-en="Free Consultation">무료 상담 신청하기</a>
   </div>
 
   <script>
+    // ===== Language Switch =====
+    function switchLang(lang) {
+      // Update toggle buttons
+      document.getElementById('langKo').classList.toggle('active', lang === 'ko');
+      document.getElementById('langEn').classList.toggle('active', lang === 'en');
+
+      // Update all elements with data-ko / data-en
+      document.querySelectorAll('[data-' + lang + ']').forEach(function (el) {
+        var val = el.getAttribute('data-' + lang);
+        if (val !== null) {
+          el.innerHTML = val;
+        }
+      });
+
+      // Update placeholders
+      document.querySelectorAll('[data-placeholder-' + lang + ']').forEach(function (el) {
+        el.placeholder = el.getAttribute('data-placeholder-' + lang);
+      });
+
+      // Update select options
+      document.querySelectorAll('option[data-' + lang + ']').forEach(function (opt) {
+        opt.textContent = opt.getAttribute('data-' + lang);
+      });
+
+      // Update html lang attribute
+      document.documentElement.lang = lang === 'ko' ? 'ko' : 'en';
+
+      // Save preference
+      localStorage.setItem('beautycrush-lang', lang);
+    }
+
+    // Load saved language
+    var savedLang = localStorage.getItem('beautycrush-lang');
+    if (savedLang && savedLang !== 'ko') {
+      switchLang(savedLang);
+    }
+
     // ===== Navigation scroll effect =====
     var nav = document.getElementById('nav');
     window.addEventListener('scroll', function () {
