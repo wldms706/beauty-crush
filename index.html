@@ -1743,6 +1743,22 @@
     consultForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
+      // Collect form data
+      var formData = {
+        name: consultForm.querySelector('[name="name"]').value,
+        phone: consultForm.querySelector('[name="phone"]').value,
+        schedule: consultForm.querySelector('[name="schedule"]').value,
+        browState: consultForm.querySelector('[name="browState"]').value,
+        style: consultForm.querySelector('[name="style"]').value,
+        memo: consultForm.querySelector('[name="memo"]').value
+      };
+
+      // Send to Google Sheets
+      fetch('https://script.google.com/macros/s/AKfycbw0YrpaQG998qQ0_I6aY2QsbSX0PK-ujkLfgLUIv2ZIMpjwihLYON7_weMLhNLPqYIzBg/exec', {
+        method: 'POST',
+        body: JSON.stringify(formData)
+      }).catch(function () {});
+
       // Meta Pixel Lead event
       if (window.fbq) {
         fbq('track', 'Lead');
