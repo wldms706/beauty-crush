@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>뷰티크러쉬 Beauty Crush – 자연스럽게, 티 안 나게. 자연 눈썹문신</title>
+  <title>뷰티크러쉬 BeautyCrush – 자연스럽게, 티 안 나게. 자연 눈썹문신</title>
   <meta name="description" content="자연스럽게, 티 안 나게. 내 얼굴에 맞춘 자연 눈썹문신. 얼굴형·눈매·인상에 맞춰 자연스러운 결로 디자인합니다." />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -1099,6 +1099,33 @@
       box-shadow: 0 4px 16px rgba(3, 199, 90, 0.3);
     }
 
+    .phone-fixed {
+      position: fixed;
+      bottom: 24px;
+      right: 92px;
+      z-index: 98;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--burgundy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .phone-fixed:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .phone-fixed svg {
+      width: 26px;
+      height: 26px;
+    }
+
     .kakao-fixed {
       position: fixed;
       bottom: 24px;
@@ -1127,6 +1154,18 @@
     }
 
     @media (max-width: 768px) {
+      .phone-fixed {
+        bottom: 76px;
+        right: 76px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .phone-fixed svg {
+        width: 22px;
+        height: 22px;
+      }
+
       .kakao-fixed {
         bottom: 76px;
         right: 16px;
@@ -1335,7 +1374,7 @@
   <!-- Navigation -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <div class="nav-logo">뷰티크러쉬 <span>Beauty Crush</span></div>
+      <div class="nav-logo">뷰티크러쉬 <span>BeautyCrush</span></div>
       <div class="nav-links">
         <a href="#process" class="nav-link" data-ko="시술 과정" data-en="Process">시술 과정</a>
         <a href="#pricing" class="nav-link" data-ko="가격" data-en="Pricing">가격</a>
@@ -1359,7 +1398,7 @@
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content fade-up">
-      <img src="KakaoTalk_Photo_2026-02-25-12-07-30.png" alt="Beauty Crush" style="width:180px; margin:0 auto 32px; display:block;" />
+      <img src="KakaoTalk_Photo_2026-02-25-12-07-30.png" alt="BeautyCrush" style="width:180px; margin:0 auto 32px; display:block;" />
       <h1 data-ko="눈썹은 그리는 게 아니라<br /><em>설계합니다</em>" data-en="Eyebrows aren't drawn,<br />they're <em>engineered</em>">
         눈썹은 그리는 게 아니라<br />
         <em>설계합니다</em>
@@ -1413,7 +1452,7 @@
           <img src="profile/profile.JPG" alt="뷰티크러쉬 원장" />
         </div>
         <div class="profile-text">
-          <p class="profile-name" data-ko="뷰티크러쉬 원장" data-en="Beauty Crush Director">뷰티크러쉬 원장</p>
+          <p class="profile-name" data-ko="뷰티크러쉬 원장" data-en="BeautyCrush Director">뷰티크러쉬 원장</p>
           <blockquote class="profile-slogan" data-ko="&quot;눈썹을 새로 그리는 게 아니라,<br /><em>인상을 만듭니다.</em>&quot;" data-en="&quot;I don't just draw new brows,<br /><em>I create impressions.</em>&quot;">
             "눈썹을 새로 그리는 게 아니라,<br />
             <em>인상을 만듭니다.</em>"
@@ -1679,6 +1718,7 @@
           <div style="text-align:center; margin-top:20px;">
             <span style="font-size:13px; color:var(--text-light);" data-ko="또는" data-en="or">또는</span><br />
             <a href="http://pf.kakao.com/_ZxdGDn" target="_blank" rel="noopener" class="btn-kakao" style="margin-top:12px; width:100%; max-width:100%;"><svg viewBox="0 0 24 24" fill="#191919"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.22 4.65 6.6l-.96 3.56c-.08.3.26.54.52.37l4.23-2.82c.5.06 1.02.09 1.56.09 5.52 0 10-3.58 10-7.9S17.52 3 12 3z"/></svg><span data-ko="카카오톡으로 문의하기" data-en="Contact via KakaoTalk">카카오톡으로 문의하기</span></a>
+            <a href="https://naver.me/xpjcOEth" target="_blank" rel="noopener" class="btn-naver-hero" style="margin-top:12px; width:100%; max-width:100%; background:#03C75A;" data-ko="네이버 바로예약 가기" data-en="Book on Naver Place">네이버 바로예약 가기</a>
           </div>
         </form>
 
@@ -1693,13 +1733,18 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-logo">뷰티크러쉬 Beauty Crush</div>
+    <div class="footer-logo">뷰티크러쉬 BeautyCrush</div>
     <p data-ko="자연 눈썹문신 1:1 맞춤 디자인 전문" data-en="Natural Eyebrow Tattoo — 1:1 Custom Design Specialist">자연 눈썹문신 1:1 맞춤 디자인 전문</p>
     <div class="footer-links">
       <a href="https://naver.me/xpjcOEth" target="_blank" rel="noopener" data-ko="네이버 플레이스" data-en="Naver Place">네이버 플레이스</a>
       <a href="http://pf.kakao.com/_ZxdGDn" target="_blank" rel="noopener" data-ko="카카오톡 문의" data-en="KakaoTalk">카카오톡 문의</a>
     </div>
   </footer>
+
+  <!-- Floating Phone Button -->
+  <a href="tel:01090443085" class="phone-fixed">
+    <svg viewBox="0 0 24 24" fill="#ffffff"><path d="M6.62 10.79a15.53 15.53 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1.01.46 1.01 1.01v3.49c0 .55-.46 1.01-1.01 1.01C10.07 21.02 2.98 13.93 2.98 5.02c0-.55.46-1.01 1.01-1.01H7.5c.55 0 1.01.46 1.01 1.01 0 1.24.2 2.45.57 3.57.11.35.03.74-.24 1.01l-2.22 2.19z"/></svg>
+  </a>
 
   <!-- Floating KakaoTalk Button -->
   <a href="http://pf.kakao.com/_ZxdGDn" target="_blank" rel="noopener" class="kakao-fixed">
